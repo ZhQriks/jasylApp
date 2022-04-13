@@ -1,0 +1,42 @@
+<div class="tui-container_adaptive">
+    <img src="assets/jasyl-logo-big.svg" alt="jasyl-logo-big" style="margin: 100px 0 30px">
+  <form [formGroup]="authForm">
+    <div class="tui-row tui-row_sme">
+      <div class="tui-col_5">
+        <div class="tui-form__row">
+          <tui-input minlength="5"
+          icon="tuiIconMail"
+          iconAlign="right"
+          formControlName="emailValue"
+          >
+            Email
+          </tui-input>
+        </div>
+        <div class="tui-form__row" style="margin-top: -2px">
+          <tui-input-password
+            formControlName="passwordValue">
+            Password
+          </tui-input-password>
+        </div>
+        <div class="tui-form__row" style="margin-top: -6px">
+          <button tuiButton appearance="jasylBtn" (click)="submit()">LOG IN</button>
+        </div>
+        <div class="tui-form__row">
+          <p>Don’t have account yet? <a  href="#">Sign up</a></p>
+        </div>
+      </div>
+    </div>
+  </form>
+  <p class="tui-space_top-3">
+    <button tuiIconButton
+            type="button"
+            appearance="serviceBtn"
+            class="tui-space_right-7"
+    ><img src="assets/icons/google.svg" alt="google Button"></button>
+    <button tuiIconButton
+            type="button"
+            appearance="serviceBtn"
+            class="tui-space-left-7"
+    ><img src="assets/icons/Facebook.svg" alt="Facebook button"></button>
+  </p>
+</div>
