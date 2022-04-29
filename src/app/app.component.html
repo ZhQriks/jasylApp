@@ -1,5 +1,6 @@
 <tui-root>
 
-<router-outlet></router-outlet>
-  <div *ngIf="href != '/' && href != '/login' "><app-bottom-menu></app-bottom-menu></div>
+  <router-outlet></router-outlet>
+  <app-bottom-menu *ngIf="currentRoute != '/' && currentRoute != '/login' && currentRoute !='/register' "></app-bottom-menu>
+
 </tui-root>

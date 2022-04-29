@@ -1,0 +1,43 @@
+@import '~@taiga-ui/core/styles/taiga-ui-local';
+
+app-register {
+  tui-wrapper[data-appearance='material-textfield'] {
+  width: 300px;
+  background: none;
+  color: #898989;
+  border-radius: 0.25rem 0.25rem 0 0;
+  height: 40px;
+  &:after {
+    .transition(all);
+    height: 0.0625rem;
+    background: #8e8e8e;
+    top: auto;
+    border: none;
+    transform-origin: bottom;
+  }
+}
+  .tui-form__row {
+    margin: 0;
+  }
+  tui-wrapper[data-appearance='jasylBtn'] {
+    background: #27D06E;
+    width: 300px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    height: 45px;
+    &[data-state='hovered'] {
+      background: #34C973;
+    }
+
+  }
+  tui-wrapper[data-appearance='serviceBtn'] {
+    background: #FFFFFF;
+    border-radius: 19px;
+    .wrapper-hover({
+      background: #D8D8D8;
+    });
+    box-shadow: 0 4px 9px rgba(52, 52, 52, 0.25);
+
+  }
+}

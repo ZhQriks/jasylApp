@@ -9,3 +9,12 @@ p {
 body.login {
   background-color: #269E58;
 }
+body.register {
+  background-color: #F5F5F5;
+}
+.tui-container_adaptive {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

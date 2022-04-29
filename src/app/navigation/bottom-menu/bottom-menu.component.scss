@@ -2,8 +2,18 @@
 
 .bottom-nav {
   @include bottom-nav.root(
-    $background-color: #009688,
-    $active-color: #FFFFFF,
-    $inactive-color: #E0E0E0
+    $background-color: #FFFFFF,
+    $active-color: #000000,
+    $inactive-color: #000000,
   );
+  height: 54px;
+  display: flex;
+  justify-content: space-around;
+}
+//make bottom_nav element a opacity of 0.6 by default, and when active, make it 1
+.bottom-nav a {
+  opacity: 0.6;
+}
+.bottom-nav a.active {
+  opacity: 1;
 }

@@ -1,52 +1,49 @@
 @import '~@taiga-ui/core/styles/taiga-ui-local';
-.tui-container_adaptive {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-tui-wrapper[data-appearance='jasylBtn'] {
-  background: #27D06E;
-  width: 300px;
-  border-radius: 20px;
-  color: #fff;
-  font-weight: bold;
-  height: 45px;
-  &[data-state='hovered'] {
-    background: #34C973;
+app-form {
+  tui-wrapper[data-appearance='jasylBtn'] {
+    background: #27D06E;
+    width: 300px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    height: 45px;
+    &[data-state='hovered'] {
+      background: #34C973;
+    }
+
+  }
+  tui-wrapper[data-appearance='serviceBtn'] {
+    background: #FFFFFF;
+    width: 75px;
+    height: 50px;
+    border-radius: 19px;
+    display: inline-block;
+    .wrapper-hover({
+      background: #D8D8D8;
+    });
+  }
+  tui-wrapper[data-appearance='material-textfield'] {
+    background: #f5f5f5;
+    width: 300px;
+    border-radius: 20px;
+    height: 45px;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .tui-form__row {
+    margin:0;
+  }
+  p {
+    text-align: center;
+    width: 300px;
+    color: #FFFFFF;
+  }
+  a {
+    color: #29E879;
+    text-decoration: none;
   }
 
-}
-tui-wrapper[data-appearance='serviceBtn'] {
-  background: #FFFFFF;
-  width: 75px;
-  height: 50px;
-  border-radius: 19px;
-  display: inline-block;
-  .wrapper-hover({
-    background: #D8D8D8;
-  });
-}
-tui-wrapper[data-appearance='material-textfield'] {
-  background: #f5f5f5;
-  width: 300px;
-  border-radius: 20px;
-  height: 45px;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-.tui-form__row {
-  margin:0;
-}
-p {
-  text-align: center;
-  width: 300px;
-  color: #FFFFFF;
-}
-a {
-  color: #29E879;
-  text-decoration: none;
-}
 
+}

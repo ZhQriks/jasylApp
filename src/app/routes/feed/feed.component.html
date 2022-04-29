@@ -1,0 +1,13 @@
+<div *ngIf="authenticated; else elseBlock" class="tui-container_adaptive">
+  <img src="assets/icons/feed/jasyl-green(small).svg" alt="logo" style="margin: 10px 0 14px 0">
+  <div style="width: 78%">
+    <tui-tabs [(activeItemIndex)]="activeItemIndex" class="tabs">
+    <button tuiTab (click)="posts()" style="color: green">Posts</button>
+    <button tuiTab (click)="hub()" style="color: green">Hub</button>
+  </tui-tabs>
+  </div>
+  <div style="width: 78%; margin-top: 15px">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<ng-template #elseBlock>Please Log In</ng-template>

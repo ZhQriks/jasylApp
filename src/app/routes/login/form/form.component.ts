@@ -1,9 +1,22 @@
-import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {TUI_PASSWORD_TEXTS, tuiInputPasswordOptionsProvider} from "@taiga-ui/kit";
-import {of} from "rxjs";
-import {TUI_BUTTON_DEFAULT_OPTIONS, TUI_TEXTFIELD_APPEARANCE} from "@taiga-ui/core";
-import {TUI_ICONS_PATH} from '@taiga-ui/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  ViewEncapsulation,
+} from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  TUI_PASSWORD_TEXTS,
+  tuiInputPasswordOptionsProvider,
+} from '@taiga-ui/kit';
+import { of } from 'rxjs';
+import {
+  TUI_BUTTON_DEFAULT_OPTIONS,
+  TUI_TEXTFIELD_APPEARANCE,
+} from '@taiga-ui/core';
+import { TUI_ICONS_PATH } from '@taiga-ui/core';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -28,16 +41,23 @@ import {TUI_ICONS_PATH} from '@taiga-ui/core';
   ],
 })
 export class FormComponent implements OnInit {
-
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) {}
   linkColor: string = '#29E879';
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   authForm = new FormGroup({
-    emailValue: new FormControl('', [Validators.required, Validators.email]),
-    passwordValue: new FormControl('', [Validators.required, Validators.minLength(6)])
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(6),
+    ]),
   });
   submit(): void {
-    console.log(this.authForm.value);
+    if (this.authForm.valid) {
+      this.http
+        .post('http://localhost:3000/login', this.authForm.getRawValue(), {
+          withCredentials: true,
+        })
+        .subscribe((res) => this.router.navigate(['/feed']));
+    }
   }
 }

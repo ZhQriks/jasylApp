@@ -7,14 +7,14 @@
           <tui-input minlength="5"
           icon="tuiIconMail"
           iconAlign="right"
-          formControlName="emailValue"
+          formControlName="email"
           >
             Email
           </tui-input>
         </div>
         <div class="tui-form__row" style="margin-top: -2px">
           <tui-input-password
-            formControlName="passwordValue">
+            formControlName="password">
             Password
           </tui-input-password>
         </div>
@@ -22,7 +22,7 @@
           <button tuiButton appearance="jasylBtn" (click)="submit()">LOG IN</button>
         </div>
         <div class="tui-form__row">
-          <p>Don’t have account yet? <a  href="#">Sign up</a></p>
+          <p class="tui-space_top-3">Don’t have account yet? <a  routerLink="/register">Sign up</a></p>
         </div>
       </div>
     </div>

@@ -1,0 +1,60 @@
+<p class="tui-space_top-5 tui-space_left-5">
+  <a
+    tuiLink
+    icon="tuiIconArrowLeft"
+    iconAlign="left"
+    routerLink="/login"
+    style="color: black; font-size:20px">
+    Create an account
+  </a>
+</p>
+<div class="tui-container_adaptive">
+  <img src="assets/jasyl-logo-big(green).svg" class="tui-space_bottom-5">
+  <form [formGroup]="registerForm">
+    <div class="tui-row tui-row_sme">
+      <div class="tui-col_6">
+        <div class="tui-form__row">
+          <tui-input formControlName="name"
+                     icon="tuiIconUser"
+                     iconAlign="right">
+            Name
+          </tui-input>
+        </div>
+        <div class="tui-form__row">
+          <tui-input formControlName="surname"
+                     icon="tuiIconUser"
+                     iconAlign="right">
+            Last name
+          </tui-input>
+        </div>
+        <div class="tui-form__row">
+          <tui-input-date formControlName="birthDate">
+            Birth date
+          </tui-input-date>
+        </div>
+        <div class="tui-form__row">
+          <tui-input formControlName="email"
+          icon="tuiIconMail"
+          iconAlign="right">
+            Email
+          </tui-input>
+        </div>
+        <div class="tui-form__row">
+          <tui-input-password
+            formControlName="passwordValue">
+            Password
+          </tui-input-password>
+        </div>
+        <div class="tui-form__row">
+          <tui-input-password
+            formControlName="passwordValueAgain">
+            Confirm password
+          </tui-input-password>
+        </div>
+        <div class="tui-form__row">
+          <button tuiButton appearance="jasylBtn" class="tui-space_top-3" (click)="submit()">SIGN UP</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
